@@ -35,3 +35,20 @@ This is a set of custom nodes for use with Shader Graph that allow you to do pix
 All angles are in degrees.
 
 To use simply add the .cs file to your project then inside Shader Graph click Create Node > Pixel Perfect and use one of the nodes.
+
+# Halftone
+
+This is a set of custom nodes for use with Shader Graph that allow you to do halftone rendering.
+
+https://en.wikipedia.org/wiki/Halftone
+
+- Halftone Circle
+- Halftone Circle Color
+- Halftone Square
+- Halftone Square Color
+- Halftone Smooth
+- Halftone Smooth Color
+
+The offset vector input defines the scale and angle of the halftone pattern.
+
+To use simply add the .cs file to your project then inside Shader Graph click Create Node > Halftone and use one of the nodes.
