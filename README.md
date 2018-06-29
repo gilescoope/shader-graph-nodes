@@ -17,7 +17,7 @@ This is a set of custom nodes for use with Shader Graph that allow you to do qua
 
 Quaternions are inputted and outputted as Vector4 values. All angles are in degrees.
 
-To use simply import the package then inside Shader Graph click Create Node > Math > Quaternion and use one of the nodes.
+To use simply add the .cs file to your project then inside Shader Graph click Create Node > Math > Quaternion and use one of the nodes.
 
 # Pixel Perfect
 
@@ -34,4 +34,4 @@ This is a set of custom nodes for use with Shader Graph that allow you to do pix
 
 All angles are in degrees.
 
-To use simply import the package then inside Shader Graph click Create Node > Pixel Perfect and use one of the nodes.
+To use simply add the .cs file to your project then inside Shader Graph click Create Node > Pixel Perfect and use one of the nodes.
