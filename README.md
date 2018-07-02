@@ -106,6 +106,8 @@ The ink spots are squares
 
 The ink tones blend between circles and inverted circles for light and dark ares respectively.
 
+## Usage
+
 All are available in monotone and three channel colour variants.
 
 The offset vector input defines the scale and angle of the halftone pattern.
