@@ -3,7 +3,7 @@
 Custom Nodes for Unity Shader Graph
 # Pattern
 
-This is a set of custom nodes for use with Shader Graph to make geometric patterns.
+This is a set of custom nodes for use with Shader Graph to make geometric patterns procedurally. All patterns are anti aliased.
 
 ## Zig Zags
 
