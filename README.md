@@ -104,7 +104,7 @@ The ink spots are squares
 
 ## Halftone Smooth
 
-The ink tones blend between circles and inverted circles for light and dark ares respectively.
+The ink spots blend between black circles and white circles for light and dark areas respectively.
 
 ## Usage
 
