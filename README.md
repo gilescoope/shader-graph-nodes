@@ -1,4 +1,4 @@
-# shadergraphnodes
+# shader-graph-nodes
 
 Custom Nodes for Unity Shader Graph
 
