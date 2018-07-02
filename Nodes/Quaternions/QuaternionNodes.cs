@@ -17,8 +17,8 @@ public class QuaternionInverseNode : CodeFunctionNode {
         Out = Vector4.zero;
         return @"
 {
-    float4 Out4 = {-Q.xyz, Q.w};
-	Out = Out4;
+    Out.xyz = -Q.xyz;
+    Out.w = Q.w;
 }
 ";
     }
@@ -38,12 +38,12 @@ public class QuaternionFromEulerNode : CodeFunctionNode {
         Out = Vector4.zero;
         return @"
 {
-	float num6, num5, num4, num3, num2, num;
-	sincos(V.z * 0.5 * 0.0174533, num6, num5);
-	sincos(V.x * 0.5 * 0.0174533, num4, num3);
-	sincos(V.y * 0.5 * 0.0174533, num2, num);
-    float4 Out4 = {num * num4 * num5 + num2 * num3 * num6, num2 * num3 * num5 - num * num4 * num6, num * num3 * num6 - num2 * num4 * num5, num * num3 * num5 + num2 * num4 * num6};
-	Out = Out4;
+	float3 Sin, Cos;
+    sincos(0.5 * 0.0174533 * V, Sin, Cos);
+    Out.x = Cos.y * Sin.x * Cos.z + Sin.y * Cos.x * Sin.z;
+    Out.y = Sin.y * Cos.x * Cos.z - Cos.y * Sin.x * Sin.z;
+    Out.z = Cos.y * Cos.x * Sin.z - Sin.y * Sin.x * Cos.z;
+    Out.w = Cos.y * Cos.x * Cos.z + Sin.y * Sin.x * Sin.z;
 } 
 ";
     }
@@ -63,11 +63,10 @@ public class QuaternionFromAngleAxisNode : CodeFunctionNode {
         Out = Vector4.zero;
         return @"
 {
-    float rad = 0.0174533 * Angle;
-    float s, c;
-    sincos(0.5*rad, s, c);
-    float4 Out4 = {Axis.x * s, Axis.y * s, Axis.z * s, c};
-    Out = Out4;
+    float Sin, Cos;
+    sincos(0.5 * 0.0174533 * Angle, Sin, Cos);
+    Out.xyz = Sin * Axis;
+    Out.w = Cos;
 } 
 ";
     }
@@ -87,9 +86,9 @@ public class QuaternionToAngleAxisNode : CodeFunctionNode {
         Axis = Vector3.zero;
         return @"
 {
-    float length = sqrt(dot(Q.xyz, Q.xyz));
-    Axis = 1/length * Q.xyz;
-    Angle = 57.2958 * 2 * atan2(length, Q.w);
+    float Length = sqrt(dot(Q.xyz, Q.xyz));
+    Axis = 1 / Length * Q.xyz;
+    Angle = 57.2958 * 2 * atan2(Length, Q.w);
 } 
 ";
     }
@@ -109,8 +108,8 @@ public class QuaternionFromToRotationNode : CodeFunctionNode {
         Out = Vector4.zero;
         return @"
 {
-    float4 Out4 = {cross(From, To), sqrt(dot(From,From)*dot(To,To)) + dot(From, To)};
-    Out = normalize(Out4);
+    Out.xyz = cross(From, To);
+    Out.w = sqrt(dot(From,From)*dot(To,To)) + dot(From, To);
 } 
 ";
     }
@@ -130,11 +129,8 @@ public class QuaternionMultiplyNode : CodeFunctionNode {
         Out = Vector4.zero;
         return @"
 {
-	float4 Out4 = float4(
-        Q.xyz * P.w + P.xyz * Q.w + cross(P.xyz, Q.xyz),
-        P.w * Q.w - dot(P.xyz, Q.xyz)
-    );
-    Out = Out4;
+    Out.xyz = P.w * Q.xyz + Q.w * P.xyz + cross(P.xyz, Q.xyz);
+    Out.w = P.w * Q.w - dot(P.xyz, Q.xyz);
 } 
 ";
     }
@@ -154,13 +150,9 @@ public class QuaternionRotateVectorNode : CodeFunctionNode {
         Out = Vector3.zero;
         return @"
 {
-    float4 QInverse = {-Q.xyz, Q.w};
-	float4 Q1 = float4(
-        V * QInverse.w + QInverse.xyz + cross(QInverse.xyz, V),
-        QInverse.w - dot(QInverse.xyz, V)
-    );
-	Out = Q.xyz * Q1.w + Q1.xyz * Q.w + cross(Q1.xyz, Q.xyz);
-} 
+    float3 Q1 = Q.w * V - Q.xyz - cross(Q.xyz, V);
+	Out = (Q.w + dot(Q.xyz, V)) * Q.xyz + Q.w * Q1 + cross(Q1, Q.xyz);
+}
 ";
     }
 }
@@ -179,14 +171,10 @@ public class QuaternionSlerpNode : CodeFunctionNode {
         Out = new Vector4(0, 0, 0, 1);
         return @"
 {
-    float cosHalfAngle = P.w * Q.w + dot(P.xyz, Q.xyz);
-    float halfAngle = acos(cosHalfAngle);
-    float sinHalfAngle = sin(halfAngle);
-    float oneOverSinHalfAngle = 1 / sinHalfAngle;
-    float blendP = sin(halfAngle * (1 - T)) * oneOverSinHalfAngle;
-    float blendQ = sin(halfAngle * T) * oneOverSinHalfAngle;
-    float4 Out4 = blendP * (cosHalfAngle > 0 ? P : -P) + blendQ * Q;
-    Out = normalize(Out4);
+    float CosHalfAngle = P.w * Q.w + dot(P.xyz, Q.xyz);
+    float HalfAngle = acos(CosHalfAngle);
+    float CosecHalfAngle = 1 / sin(HalfAngle);
+    Out = normalize((sin(HalfAngle * (1 - T)) * CosecHalfAngle) * (CosHalfAngle > 0 ? P : -P) + (sin(HalfAngle * T) * CosecHalfAngle) * Q);
 } 
 ";
     }

@@ -13,17 +13,17 @@ public class PixelPointNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelPoint", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelPoint([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None)] out Vector1 Out) {
+	static string PixelPoint([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None)] out Vector1 Out) {
 		return @"
 {
     float2 f = UV - Position;
     float2 ddxUV = ddx(UV);
     float2 ddyUV = ddy(UV);
 	
-	float d = ddxUV.x*ddyUV.y-ddxUV.y*ddyUV.x;
+	float InvD = 1/(ddxUV.x*ddyUV.y-ddxUV.y*ddyUV.x);
 
-	float tx = (ddyUV.y*f.x-ddyUV.x*f.y)/d;
-	float ty = (-ddxUV.y*f.x+ddxUV.x*f.y)/d;
+	float tx = (ddyUV.y*f.x-ddyUV.x*f.y)*InvD;
+	float ty = (-ddxUV.y*f.x+ddxUV.x*f.y)*InvD;
 
     Out = (tx > -0.5 && tx <= 0.5) && (ty > -0.5 && ty <= 0.5) ? 1 : 0;
 }
@@ -41,7 +41,7 @@ public class PixelPointGridNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelPointGrid", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelPointGrid([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None, 0.1f, 0, 0, 0)] Vector1 Width, [Slot(3, Binding.None)] out Vector1 Out) {
+	static string PixelPointGrid([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None, 0.1f, 0, 0, 0)] Vector1 Width, [Slot(3, Binding.None)] out Vector1 Out) {
 		return @"
 {
     float2 f = UV - Position;
@@ -50,10 +50,10 @@ public class PixelPointGridNode : CodeFunctionNode {
     float2 ddxUV = ddx(UV);
     float2 ddyUV = ddy(UV);
 	
-	float d = ddxUV.x*ddyUV.y-ddxUV.y*ddyUV.x;
+	float InvD = 1/(ddxUV.x*ddyUV.y-ddxUV.y*ddyUV.x);
 
-	float tx = (ddyUV.y*f.x-ddyUV.x*f.y)/d;
-	float ty = (-ddxUV.y*f.x+ddxUV.x*f.y)/d;
+	float tx = (ddyUV.y*f.x-ddyUV.x*f.y)*InvD;
+	float ty = (-ddxUV.y*f.x+ddxUV.x*f.y)*InvD;
 
     Out = (tx > -0.5 && tx <= 0.5) && (ty > -0.5 && ty <= 0.5) ? 1 : 0;
 }
@@ -71,7 +71,7 @@ public class PixelRayNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelRay", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelRay([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None, 1, 0, 0, 0)] Vector2 Direction, [Slot(3, Binding.None)] out Vector1 Out) {
+	static string PixelRay([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None, 1, 0, 0, 0)] Vector2 Direction, [Slot(3, Binding.None)] out Vector1 Out) {
 		return @"
 {
     float2 d = Direction;
@@ -79,11 +79,8 @@ public class PixelRayNode : CodeFunctionNode {
     float2 ddxUV = ddx(UV);
     float2 ddyUV = ddy(UV);
 
-    float d1 = ddxUV.y * d.x - ddxUV.x * d.y;
-    float d2 = ddyUV.y * d.x - ddyUV.x * d.y;
-
-    float tq1 = (d.x * f.y - d.y * f.x) / d1;
-    float tq2 = (d.x * f.y - d.y * f.x) / d2;
+    float tq1 = (d.x * f.y - d.y * f.x) / (ddxUV.y * d.x - ddxUV.x * d.y);
+    float tq2 = (d.x * f.y - d.y * f.x) / (ddyUV.y * d.x - ddyUV.x * d.y);
 
     Out = (tq1 > -0.5 && tq1 <= 0.5) || (tq2 > -0.5 && tq2 <= 0.5) ? 1 : 0;
 }
@@ -101,7 +98,7 @@ public class PixelRaysNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelRays", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelRays([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None, 1, 0, 0, 0)] Vector2 Direction, [Slot(3, Binding.None, 0.1f, 0, 0, 0)] Vector1 Width, [Slot(4, Binding.None)] out Vector1 Out) {
+	static string PixelRays([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position, [Slot(2, Binding.None, 1, 0, 0, 0)] Vector2 Direction, [Slot(3, Binding.None, 0.1f, 0, 0, 0)] Vector1 Width, [Slot(4, Binding.None)] out Vector1 Out) {
 		return @"
 {
     float2 d = Direction;
@@ -112,11 +109,8 @@ public class PixelRaysNode : CodeFunctionNode {
     float2 ddxUV = ddx(UV);
     float2 ddyUV = ddy(UV);
 
-    float d1 = ddxUV.y * d.x - ddxUV.x * d.y;
-    float d2 = ddyUV.y * d.x - ddyUV.x * d.y;
-
-    float tq1 = (d.x * f.y - d.y * f.x) / d1;
-    float tq2 = (d.x * f.y - d.y * f.x) / d2;
+    float tq1 = (d.x * f.y - d.y * f.x) / (ddxUV.y * d.x - ddxUV.x * d.y);
+    float tq2 = (d.x * f.y - d.y * f.x) / (ddyUV.y * d.x - ddyUV.x * d.y);
 
     Out = (tq1 > -0.5 && tq1 <= 0.5) || (tq2 > -0.5 && tq2 <= 0.5) ? 1 : 0;
 }
@@ -134,7 +128,7 @@ public class PixelLineNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelLine", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelLine([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position1, [Slot(2, Binding.None)] Vector2 Position2, [Slot(3, Binding.None)] out Vector1 Out) {
+	static string PixelLine([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position1, [Slot(2, Binding.None)] Vector2 Position2, [Slot(3, Binding.None)] out Vector1 Out) {
 		return @"
 
 {
@@ -143,14 +137,14 @@ public class PixelLineNode : CodeFunctionNode {
     float2 ddxUV = ddx(UV);
     float2 ddyUV = ddy(UV);
 
-    float d1 = ddxUV.y * d.x - ddxUV.x * d.y;
-    float d2 = ddyUV.y * d.x - ddyUV.x * d.y;
+    float InvD1 = 1/(ddxUV.y * d.x - ddxUV.x * d.y);
+    float InvD2 = 1/(ddyUV.y * d.x - ddyUV.x * d.y);
 
-    float tp1 = -(ddxUV.x * f.y - ddxUV.y * f.x) / d1;
-    float tq1 = (d.x * f.y - d.y * f.x) / d1;
+    float tp1 = -(ddxUV.x * f.y - ddxUV.y * f.x) * InvD1;
+    float tq1 = (d.x * f.y - d.y * f.x) * InvD1;
 
-    float tp2 = -(ddyUV.x * f.y - ddyUV.y * f.x) / d2;
-    float tq2 = (d.x * f.y - d.y * f.x) / d2;
+    float tp2 = -(ddyUV.x * f.y - ddyUV.y * f.x) * InvD2;
+    float tq2 = (d.x * f.y - d.y * f.x) * InvD2;
 
     Out = (tp1 >= 0 && tp1 <= 1 && tq1 > -0.5 && tq1 <= 0.5) || (tp2 >= 0 && tp2 <= 1 && tq2 > -0.5 && tq2 <= 0.5) ? 1 : 0;
 }
@@ -168,7 +162,7 @@ public class PixelLinesNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelLines", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelLines([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position1, [Slot(2, Binding.None)] Vector2 Position2, [Slot(3, Binding.None, 0.1f, 0, 0, 0)] Vector1 Width, [Slot(4, Binding.None)] out Vector1 Out) {
+	static string PixelLines([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Position1, [Slot(2, Binding.None)] Vector2 Position2, [Slot(3, Binding.None, 0.1f, 0, 0, 0)] Vector1 Width, [Slot(4, Binding.None)] out Vector1 Out) {
 		return @"
 
 {
@@ -180,14 +174,14 @@ public class PixelLinesNode : CodeFunctionNode {
     float2 ddxUV = ddx(UV);
     float2 ddyUV = ddy(UV);
 
-    float d1 = ddxUV.y * d.x - ddxUV.x * d.y;
-    float d2 = ddyUV.y * d.x - ddyUV.x * d.y;
+    float InvD1 = 1/(ddxUV.y * d.x - ddxUV.x * d.y);
+    float InvD2 = 1/(ddyUV.y * d.x - ddyUV.x * d.y);
 
-    float tp1 = -(ddxUV.x * f.y - ddxUV.y * f.x) / d1;
-    float tq1 = (d.x * f.y - d.y * f.x) / d1;
+    float tp1 = -(ddxUV.x * f.y - ddxUV.y * f.x) * InvD1;
+    float tq1 = (d.x * f.y - d.y * f.x) * InvD1;
 
-    float tp2 = -(ddyUV.x * f.y - ddyUV.y * f.x) / d2;
-    float tq2 = (d.x * f.y - d.y * f.x) / d2;
+    float tp2 = -(ddyUV.x * f.y - ddyUV.y * f.x) * InvD2;
+    float tq2 = (d.x * f.y - d.y * f.x) * InvD2;
 
     Out = (tp1 >= 0 && tp1 <= 1 && tq1 > -0.5 && tq1 <= 0.5) || (tp2 >= 0 && tp2 <= 1 && tq2 > -0.5 && tq2 <= 0.5) ? 1 : 0;
 }
@@ -195,7 +189,7 @@ public class PixelLinesNode : CodeFunctionNode {
 	}
 }
 
-[Title("Pixel Circle", "Pixel Circle")]
+[Title("Pixel Perfect", "Pixel Circle")]
 public class PixelCircleNode : CodeFunctionNode {
 	public PixelCircleNode() {
 		name = "Pixel Circle";
@@ -205,7 +199,7 @@ public class PixelCircleNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelCircle", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelCircle([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Center, [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Vector1 Radius, [Slot(3, Binding.None)] out Vector1 Out) {
+	static string PixelCircle([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Center, [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Vector1 Radius, [Slot(3, Binding.None)] out Vector1 Out) {
 		return @"
 
 {
@@ -227,7 +221,7 @@ public class PixelCircleNode : CodeFunctionNode {
 	}
 }
 
-[Title("Pixel Polygon", "Pixel Polygon")]
+[Title("Pixel Perfect", "Pixel Polygon")]
 public class PixelPolygonNode : CodeFunctionNode {
 	public PixelPolygonNode() {
 		name = "Pixel Polygon";
@@ -237,7 +231,7 @@ public class PixelPolygonNode : CodeFunctionNode {
 		return GetType().GetMethod("PixelPolygon", BindingFlags.Static | BindingFlags.NonPublic);
 	}
 
-	static string PixelPolygon([Slot(0, Binding.None)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Center, [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Vector1 Radius, [Slot(3, Binding.None, 6, 0, 0, 0)] Vector1 Sides, [Slot(4, Binding.None)] Vector1 Angle, [Slot(5, Binding.None)] out Vector1 Out) {
+	static string PixelPolygon([Slot(0, Binding.WorldSpacePosition)] Vector2 UV, [Slot(1, Binding.None)] Vector2 Center, [Slot(2, Binding.None, 0.5f, 0, 0, 0)] Vector1 Radius, [Slot(3, Binding.None, 6, 0, 0, 0)] Vector1 Sides, [Slot(4, Binding.None)] Vector1 Angle, [Slot(5, Binding.None)] out Vector1 Out) {
 		return @"
 
 {
@@ -246,20 +240,17 @@ public class PixelPolygonNode : CodeFunctionNode {
 	float angle = 6.2831853071/Sides;
 	Angle = 0.0174533*Angle;
 
-	float sinSide, cosSide;
-	sincos(round((theta - Angle) / angle) * angle + Angle, sinSide, cosSide); 
+	float SinSide, CosSide;
+	sincos(round((theta - Angle) / angle) * angle + Angle, SinSide, CosSide); 
 
-    float2 d = {sinSide, -cosSide};
-	float2 n = {cosSide, sinSide};
+    float2 d = float2(SinSide, -CosSide);
+	float2 n = float2(CosSide, SinSide);
     f = f - n*Radius;
     float2 ddxUV = ddx(UV);
     float2 ddyUV = ddy(UV);
 
-    float d1 = ddxUV.y * d.x - ddxUV.x * d.y;
-    float d2 = ddyUV.y * d.x - ddyUV.x * d.y;
-
-    float tq1 = (d.x * f.y - d.y * f.x) / d1;
-    float tq2 = (d.x * f.y - d.y * f.x) / d2;
+    float tq1 = (d.x * f.y - d.y * f.x) / (ddxUV.y * d.x - ddxUV.x * d.y);
+    float tq2 = (d.x * f.y - d.y * f.x) / (ddyUV.y * d.x - ddyUV.x * d.y);
 
     Out = (tq1 > -0.5 && tq1 <= 0.5) || (tq2 > -0.5 && tq2 <= 0.5) ? 1 : 0;
 }
