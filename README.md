@@ -18,7 +18,7 @@ Stripes made up of zig zags.
 
 Stripes made up of sine waves.
 
-![](https://media.giphy.com/media/8JThrbgXEu597ygC77/giphy.gif)
+![](https://media.giphy.com/media/d7p9KoFKXnatt2C1S2/giphy.gif)
 - Widths controls the widths of the black and white stripes respectively.
 - Wavelength controls the wavelength of the wave.
 - Amplitude controls peak to peak amplitude of the wave.
