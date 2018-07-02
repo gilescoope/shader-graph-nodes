@@ -1,6 +1,17 @@
 # shader-graph-nodes
 
 Custom Nodes for Unity Shader Graph
+# Pattern
+
+This is a set of custom nodes for use with Shader Graph to make geometric patterns.
+
+- Zig Zags
+<iframe src='https://gfycat.com/ifr/ElegantFirstBorzoi' frameborder='0' scrolling='no' width='300' height='300' allowfullscreen></iframe>
+- Sine Waves
+- Round Waves
+- Spiral
+- Whirl
+- Dots
 
 # Quaternion
 
