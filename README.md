@@ -9,7 +9,7 @@ This is a set of custom nodes for use with Shader Graph to make geometric patter
 
 Stripes made up of zig zags.
 
-![](https://media.giphy.com/media/dtC1zxTtibhfVjzsgN/giphy.gif)
+![](https://media.giphy.com/media/8JThrbgXEu597ygC77/giphy.gif)
 - Widths controls the widths of the black and white stripes respectively.
 - Wavelength controls the wavelength of the wave.
 - Amplitude controls peak to peak amplitude of the wave.
