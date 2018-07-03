@@ -1,6 +1,36 @@
 # shader-graph-nodes
 
 Custom Nodes for Unity Shader Graph
+
+# Truchet
+
+This is a set of custom nodes for use with Shader Graph to make random Truchet tilings procedurally.
+
+## Square
+
+![](https://i.imgur.com/5Dro33N.png)
+![](https://i.imgur.com/g5soK2Z.png)
+![](https://i.imgur.com/N45wDdm.png)
+![](https://i.imgur.com/FeKdbZQ.png)
+
+A grid of squares.
+
+## Hexagon
+
+![](https://i.imgur.com/TuwvUIb.png)
+
+A grid of regular hexagons.
+
+## Triangle
+
+![](https://i.imgur.com/JHnDAkM.png)
+
+A grid of equilateral triangles.
+
+## Usage
+
+![](https://i.imgur.com/htzzQlo.png)
+
 # Pattern
 
 This is a set of custom nodes for use with Shader Graph to make geometric patterns procedurally. All patterns are anti aliased.
