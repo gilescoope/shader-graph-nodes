@@ -35,7 +35,7 @@ A grid of regular hexagons.
 
 ![](https://i.imgur.com/TuwvUIb.png)
 
-Here we can see the different patterns that can be produced from the same tile. Firstly without rotation or reflection.
+Here we can see the different patterns that can be produced from the same tile as above. Firstly without rotation or reflection.
 
 ![](https://i.imgur.com/csCGQCq.png)
 
