@@ -1,5 +1,7 @@
 # Complex
 
+These nodes allow complex arithmetic inside the shader graph. The x component of each Vector2 represents the real part of the complex number, the y component the imaginary part.
+
 | Name  |  Result  |
 |---|---|
 |  Complex Conjugate  | Out = Ā |
@@ -9,7 +11,5 @@
 |  Complex Logarithm |  Out = ln (A) |
 |  Complex Exponential  | Out = e ^ A  |
 |  Complex Power  |  Out = A ^ B |
-
-The x component of each Vector2 is the real part of the complex number, the y component the imaginary part.
 
 Addition and subtraction can be accomplished with the standard vector nodes. The modulus and argument of a complex number can be extracted using the polar coordinates node.
