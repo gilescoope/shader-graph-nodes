@@ -9,12 +9,12 @@ These SDFs can be sampled with the SDF Sample nodes and combined with the SDF Bo
 | Line | Circle |
 |---|---|
 | ![](https://i.imgur.com/y0CxcXQ.png) | ![](https://i.imgur.com/bf8YDGH.png) |
-| A vertical line passing through (Position, 0) with width Width| A circle centered at Position with radius Radius |
+| A vertical line passing through (Position, 0)<br> with width Width| A circle centered at Position with radius Radius |
 
 | Rectangle | Polygon |
 |---|---|
 | ![](https://i.imgur.com/3MtHoIX.png) | ![](https://i.imgur.com/LZSOUF4.png) |
-| A Rectangle centered at Position with width Width and height Height<br>Increasing the Corner Radius creates a rounded rectangle | A regular polygon centered at Position with radius Radius and number of sides Sides (not necessarily an integer)<br>Increasing the Corner Radius creates a rounded polygon |
+| A Rectangle centered at Position with width Width and height Height. Increasing the Corner Radius creates a rounded rectangle | A regular polygon centered at Position<br> with radius Radius and number of sides Sides (not necessarily an integer). Increasing the Corner Radius creates a rounded polygon |
 
 ## Sampling
 
