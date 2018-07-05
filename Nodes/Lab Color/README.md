@@ -1,1 +1,1 @@
-# Lab color
+# Lab Color
