@@ -8,11 +8,11 @@ Custom Nodes for Unity Shader Graph
 
 [Halftone](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Halftone)
 
-[Lab Color](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Lab Color)
+[Lab Color](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Lab%20Color)
 
 [Pattern](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Pattern)
 
-[Pixel Perfect](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Pixel Perfect)
+[Pixel Perfect](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Pixel%20Perfect)
 
 [Quaternion](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Quaternion)
 
