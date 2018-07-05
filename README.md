@@ -12,7 +12,7 @@ Do complex arithmetic in shader graph.
 
 ![](https://media.giphy.com/media/vguUknl0cv6I8roYOo/giphy.gif)
 
-Complete set of Porter Duff transparency equations.
+Complete set of Porter Duff transparency operations.
 
 [Halftone](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Halftone)
 
