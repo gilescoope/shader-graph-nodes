@@ -2,7 +2,7 @@
 
 | Name  |  Result  |
 |---|---|
-|  Complex Conjugate  | Out = \bar{A}  |
+|  Complex Conjugate  | Out = \bar{a}  |
 |  Complex Reciprocal |   |
 |  Complex Multiply |   |
 |  Complex Divide |   |
