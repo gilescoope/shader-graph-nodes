@@ -76,13 +76,13 @@ public class SplitNode : CodeFunctionNode {
     float3 Lab = float3(116 * f.y - 16, 500 * (f.x-f.y), 200 * (f.y-f.z));
     float3 LCH = float3(Lab.x, sqrt(Lab.y*Lab.y + Lab.z*Lab.z), (Lab.z == 0 && Lab.y == 0) ? 0 : atan2(Lab.z, Lab.y));
 
-    Lab = float3(LCH.x, LCH.y*cos(LCH.z- Angle), LCH.y*sin(LCH.z - Angle));
+    Lab = float3(LCH.x, LCH.y*cos(LCH.z+ Angle), LCH.y*sin(LCH.z + Angle));
     XYZ = float3(Lab.y/500, 0, -Lab.z/200) + (Lab.x + 16)/116;
     XYZ = n * (float3(XYZ > 0.20689655172) ? XYZ*XYZ*XYZ : 0.12841854934 * (XYZ - 0.13793103448));
     RGB = mul(XYZRGB, XYZ);
     Out1.xyz = RGB;
 
-    Lab = float3(LCH.x, LCH.y*cos(LCH.z + Angle), LCH.y*sin(LCH.z + Angle));
+    Lab = float3(LCH.x, LCH.y*cos(LCH.z - Angle), LCH.y*sin(LCH.z - Angle));
     XYZ = float3(Lab.y/500, 0, -Lab.z/200) + (Lab.x + 16)/116;
     XYZ = n * (float3(XYZ > 0.20689655172) ? XYZ*XYZ*XYZ : 0.12841854934 * (XYZ - 0.13793103448));
     RGB = mul(XYZRGB, XYZ);
@@ -132,7 +132,7 @@ public class DualNode : CodeFunctionNode {
     RGB = mul(XYZRGB, XYZ);
     Out2.xyz = RGB;
 
-    Lab = float3(LCH.x, LCH.y*cos(LCH.z- Angle), LCH.y*sin(LCH.z - Angle));
+    Lab = float3(LCH.x, LCH.y*cos(LCH.z+ Angle), LCH.y*sin(LCH.z + Angle));
     XYZ = float3(Lab.y/500, 0, -Lab.z/200) + (Lab.x + 16)/116;
     XYZ = n * (float3(XYZ > 0.20689655172) ? XYZ*XYZ*XYZ : 0.12841854934 * (XYZ - 0.13793103448));
     RGB = mul(XYZRGB, XYZ);
