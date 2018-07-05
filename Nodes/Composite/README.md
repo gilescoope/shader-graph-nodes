@@ -10,28 +10,11 @@ Here we see what happens if we composite a blue square A (71, 154, 239, 0.62) an
 |---|---|
 |  ![](https://i.imgur.com/Q6ULhuF.png) | ![](https://i.imgur.com/wuuEaSK.png)  |
 
+|  A Over B | A In B  | A Out B | A Atop B | A Xor B |
+|---|---|---|---|---|
+| ![](https://i.imgur.com/UTbi2S0.png) | ![](https://i.imgur.com/kqB3JEd.png) | ![](https://i.imgur.com/vV2i9Of.png) | ![](https://i.imgur.com/r1l2XPU.png) | ![](https://i.imgur.com/vbkoo9x.png) |
 
-## A Over B
-
-![](https://i.imgur.com/UTbi2S0.png)
-
-This is the regular painter's algorithm, equivalent to Blend > Normal in Photoshop.
-
-## A In B
-
-![](https://i.imgur.com/kqB3JEd.png)
-
-## A Out B
-
-![](https://i.imgur.com/vV2i9Of.png)
-
-## A Atop B
-
-![](https://i.imgur.com/r1l2XPU.png)
-
-## A Xor B
-
-![](https://i.imgur.com/vbkoo9x.png)
+Over is the regular painter's algorithm, equivalent to Blend > Normal in Photoshop.
 
 ## Usage
 
