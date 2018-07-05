@@ -2,7 +2,7 @@
 
 These nodes allow complex arithmetic inside the shader graph. The x component of each Vector2 represents the real part of the complex number, the y component the imaginary part.
 
-| Name  |  Result  |
+| Node  |  Result  |
 |---|---|
 |  Complex Conjugate  | Out = Ā |
 |  Complex Reciprocal | Out = 1 / A |
