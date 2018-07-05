@@ -1,8 +1,12 @@
 # SDF
 
+Signed distance functions give a single float value for each pixel that represents the distance to some boundary. They can be used for rendering crisp text at any resolution or used for produral art.
+
+https://en.wikipedia.org/wiki/Signed_distance_function
+
 ## Primitives
 
-These nodes create signed distance fields for primitive shapes. These can be translated and rotated, but any other transformation (scale, shear) may result in unexpected behaviour.
+These nodes create signed distance functions for primitive shapes. These can be translated and rotated, but any other transformation (scale, shear) may result in unexpected behaviour.
 
 These SDFs can be sampled with the SDF Sample nodes and combined with the SDF Boolean nodes.
 
