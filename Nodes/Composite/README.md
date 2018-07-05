@@ -6,13 +6,10 @@ https://en.wikipedia.org/wiki/Alpha_compositing
 
 Here we see what happens if we composite a blue square A (71, 154, 239, 0.62) and a pink circle B (218, 31, 100, 0.62) using the different composite modes.
 
-## A
+|  A | B  |
+|---|---|
+|  ![](https://i.imgur.com/Q6ULhuF.png) | ![](https://i.imgur.com/wuuEaSK.png)  |
 
-![](https://i.imgur.com/Q6ULhuF.png)
-
-## B
-
-![](https://i.imgur.com/wuuEaSK.png)
 
 ## A Over B
 
