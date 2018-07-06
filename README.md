@@ -1,6 +1,6 @@
 # shader-graph-nodes
 
-Custom Nodes for Unity Shader Graph
+Custom Nodes for Unity Shader Graph, to be used in Unity 2018.2 with the scriptable render pipeline.
 
 [Complex](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Complex)
 
