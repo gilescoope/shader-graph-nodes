@@ -6,13 +6,13 @@ Custom Nodes for Unity Shader Graph, to be used in Unity 2018.2 with the scripta
 
 ![](https://media.giphy.com/media/6bdccghcG0TUc1uhbT/giphy.gif)
 
-Signed distance functions for amazing procedural effects.
+Signed distance functions for interesting procedural effects.
 
 [Truchet](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Truchet)
 
 ![](https://media.giphy.com/media/E1wbE3JmT8EnNU80Ij/giphy.gif)
 
-Truchet tiling nodes to make beautiful irregular patterns.
+Truchet tiling nodes to make irregular patterns.
 
 [Composite](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Composite)
 
