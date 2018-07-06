@@ -2,11 +2,17 @@
 
 Custom Nodes for Unity Shader Graph, to be used in Unity 2018.2 with the scriptable render pipeline.
 
-[Complex](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Complex)
+[SDF](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/SDF)
 
-![](https://media.giphy.com/media/1k4TFmQR4VF2BlgP3V/giphy.gif)
+![](https://media.giphy.com/media/6bdccghcG0TUc1uhbT/giphy.gif)
 
-Do complex arithmetic in shader graph.
+Signed distance functions for amazing procedural effects.
+
+[Truchet](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Truchet)
+
+![](https://media.giphy.com/media/E1wbE3JmT8EnNU80Ij/giphy.gif)
+
+Truchet tiling nodes to make beautiful irregular patterns.
 
 [Composite](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Composite)
 
@@ -38,20 +44,16 @@ Procedural geometric patterns.
 
 Pixel-wide primitives, no matter what the surface.
 
+[Complex](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Complex)
+
+![](https://media.giphy.com/media/1k4TFmQR4VF2BlgP3V/giphy.gif)
+
+Do complex arithmetic in shader graph.
+
 [Quaternion](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Quaternion)
 
 ![](https://media.giphy.com/media/kFMNHPazCEKS8ySaO2/giphy.gif)
 
 Quaternion algebra for rotation calculations in the graph.
 
-[SDF](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/SDF)
 
-![](https://media.giphy.com/media/6bdccghcG0TUc1uhbT/giphy.gif)
-
-Signed distance functions for amazing procedural effects.
-
-[Truchet](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Truchet)
-
-![](https://media.giphy.com/media/E1wbE3JmT8EnNU80Ij/giphy.gif)
-
-Truchet tiling nodes to make beautiful irregular patterns.
