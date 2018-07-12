@@ -56,4 +56,10 @@ Do complex arithmetic in shader graph.
 
 Quaternion algebra for rotation calculations in the graph.
 
+[Symmetry](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Symmetry)
 
+Reflection, rotation and tiling symmetry nodes.
+
+[Random](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/Random)
+
+Generate pseudorandom vectors, colors and quaternions.
