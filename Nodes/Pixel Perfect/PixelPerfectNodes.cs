@@ -236,12 +236,18 @@ public class PixelPolygonNode : CodeFunctionNode {
 
 {
     float2 f = UV - Center;
-	float theta = atan2(f.y, f.x);
 	float angle = 6.2831853071/Sides;
 	Angle = 0.0174533*Angle;
 
+	// Apply rotation
+	float sinAngle, cosAngle;
+	sincos(Angle, sinAngle, cosAngle);
+	f = float2(f.y * sinAngle + f.x * cosAngle, f.y * cosAngle - f.x * sinAngle);
+
+	float theta = atan2(f.y, f.x);
+
 	float SinSide, CosSide;
-	sincos(round((theta - Angle) / angle) * angle + Angle, SinSide, CosSide); 
+	sincos(round(theta / angle) * angle, SinSide, CosSide); 
 
     float2 d = float2(SinSide, -CosSide);
 	float2 n = float2(CosSide, SinSide);
