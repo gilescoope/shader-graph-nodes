@@ -1,6 +1,7 @@
 # shader-graph-nodes
+### This fork adds support for Unity 2019.4 and higher!
 
-Custom Nodes for Unity Shader Graph, to be used in Unity 2018.2 with the scriptable render pipeline.
+Custom Nodes for Unity Shader Graph, to be used in new Unity versions with the SRP / URP / HDRP.
 
 [SDF](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/SDF)
 
