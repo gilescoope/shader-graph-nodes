@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEngine;
 
 [Title("Pixel Perfect", "Pixel Point")]
-public class PixelPointNode : CodeFunctionNode {
+internal class PixelPointNode : CodeFunctionNode {
 	public PixelPointNode() {
 		name = "Pixel Point";
 	}
@@ -32,7 +32,7 @@ public class PixelPointNode : CodeFunctionNode {
 }
 
 [Title("Pixel Perfect", "Pixel Point Grid")]
-public class PixelPointGridNode : CodeFunctionNode {
+internal class PixelPointGridNode : CodeFunctionNode {
 	public PixelPointGridNode() {
 		name = "Pixel Point Grid";
 	}
@@ -62,7 +62,7 @@ public class PixelPointGridNode : CodeFunctionNode {
 }
 
 [Title("Pixel Perfect", "Pixel Ray")]
-public class PixelRayNode : CodeFunctionNode {
+internal class PixelRayNode : CodeFunctionNode {
 	public PixelRayNode() {
 		name = "Pixel Ray";
 	}
@@ -89,7 +89,7 @@ public class PixelRayNode : CodeFunctionNode {
 }
 
 [Title("Pixel Perfect", "Pixel Rays")]
-public class PixelRaysNode : CodeFunctionNode {
+internal class PixelRaysNode : CodeFunctionNode {
 	public PixelRaysNode() {
 		name = "Pixel Rays";
 	}
@@ -119,7 +119,7 @@ public class PixelRaysNode : CodeFunctionNode {
 }
 
 [Title("Pixel Perfect", "Pixel Line")]
-public class PixelLineNode : CodeFunctionNode {
+internal class PixelLineNode : CodeFunctionNode {
 	public PixelLineNode() {
 		name = "Pixel Line";
 	}
@@ -153,7 +153,7 @@ public class PixelLineNode : CodeFunctionNode {
 }
 
 [Title("Pixel Perfect", "Pixel Lines")]
-public class PixelLinesNode : CodeFunctionNode {
+internal class PixelLinesNode : CodeFunctionNode {
 	public PixelLinesNode() {
 		name = "Pixel Lines";
 	}
@@ -190,7 +190,7 @@ public class PixelLinesNode : CodeFunctionNode {
 }
 
 [Title("Pixel Perfect", "Pixel Circle")]
-public class PixelCircleNode : CodeFunctionNode {
+internal class PixelCircleNode : CodeFunctionNode {
 	public PixelCircleNode() {
 		name = "Pixel Circle";
 	}
@@ -222,7 +222,7 @@ public class PixelCircleNode : CodeFunctionNode {
 }
 
 [Title("Pixel Perfect", "Pixel Polygon")]
-public class PixelPolygonNode : CodeFunctionNode {
+internal class PixelPolygonNode : CodeFunctionNode {
 	public PixelPolygonNode() {
 		name = "Pixel Polygon";
 	}

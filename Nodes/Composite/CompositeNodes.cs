@@ -17,7 +17,7 @@ public enum CompositeMode
 }
 
 [Title("Compositing", "Composite")]
-public class CompositeNode : CodeFunctionNode {
+internal class CompositeNode : CodeFunctionNode {
     [SerializeField]
     private CompositeMode m_CompositeMode = CompositeMode.Over;
     

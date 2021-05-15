@@ -14,7 +14,7 @@ public enum HalftoneMode {
 }
 
 [Title("Halftone", "Halftone Monochrome")]
-public class HalftoneMonochromeNode : CodeFunctionNode {
+internal class HalftoneMonochromeNode : CodeFunctionNode {
     [SerializeField] private HalftoneMode m_HalftoneMode = HalftoneMode.Circle;
 
     public HalftoneMonochromeNode() {
@@ -85,7 +85,7 @@ public class HalftoneMonochromeNode : CodeFunctionNode {
 }
 
 [Title("Halftone", "Halftone Color")]
-public class HalftoneColorNode : CodeFunctionNode {
+internal class HalftoneColorNode : CodeFunctionNode {
     [SerializeField] private HalftoneMode m_HalftoneMode = HalftoneMode.Circle;
 
     public HalftoneColorNode() {

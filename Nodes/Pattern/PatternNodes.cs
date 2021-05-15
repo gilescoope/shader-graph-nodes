@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEngine;
 
 [Title("Pattern", "Zig Zag")]
-public class ZigZagNode : CodeFunctionNode {
+internal class ZigZagNode : CodeFunctionNode {
     public ZigZagNode() {
         name = "Zig Zag";
     }
@@ -27,7 +27,7 @@ public class ZigZagNode : CodeFunctionNode {
 }
 
 [Title("Pattern", "Sine Waves")]
-public class SineWavesNode : CodeFunctionNode {
+internal class SineWavesNode : CodeFunctionNode {
     public SineWavesNode() {
         name = "Sine Waves";
     }
@@ -51,7 +51,7 @@ public class SineWavesNode : CodeFunctionNode {
 }
 
 [Title("Pattern", "Round Waves")]
-public class RoundWavesNode : CodeFunctionNode {
+internal class RoundWavesNode : CodeFunctionNode {
     public RoundWavesNode() {
         name = "Round Waves";
     }
@@ -81,7 +81,7 @@ public class RoundWavesNode : CodeFunctionNode {
 }
 
 [Title("Pattern", "Dots")]
-public class DotsNode : CodeFunctionNode {
+internal class DotsNode : CodeFunctionNode {
     public DotsNode() {
         name = "Dots";
     }
@@ -110,7 +110,7 @@ public class DotsNode : CodeFunctionNode {
 }
 
 [Title("Pattern", "Spiral")]
-public class SpiralNode : CodeFunctionNode {
+internal class SpiralNode : CodeFunctionNode {
     public SpiralNode() {
         name = "Spiral";
     }
@@ -135,7 +135,7 @@ public class SpiralNode : CodeFunctionNode {
 
 
 [Title("Pattern", "Whirl")]
-public class WhirlNode : CodeFunctionNode {
+internal class WhirlNode : CodeFunctionNode {
     public WhirlNode() {
         name = "Whirl";
     }

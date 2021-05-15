@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 [Title("Math", "Complex", "Complex Conjugate")]
-public class ComplexConjugateNode : CodeFunctionNode {
+internal class ComplexConjugateNode : CodeFunctionNode {
 	public ComplexConjugateNode() {
 		name = "Complex Conjugate";
 	}
@@ -26,7 +26,7 @@ public class ComplexConjugateNode : CodeFunctionNode {
 }
 
 [Title("Math", "Complex", "Complex Reciprocal")]
-public class ComplexReciprocalNode : CodeFunctionNode {
+internal class ComplexReciprocalNode : CodeFunctionNode {
 	public ComplexReciprocalNode() {
 		name = "Complex Reciprocal";
 	}
@@ -46,7 +46,7 @@ public class ComplexReciprocalNode : CodeFunctionNode {
 }
 
 [Title("Math", "Complex", "Complex Multiply")]
-public class ComplexMultiplyNode : CodeFunctionNode {
+internal class ComplexMultiplyNode : CodeFunctionNode {
 	public ComplexMultiplyNode() {
 		name = "Complex Multiply";
 	}
@@ -66,7 +66,7 @@ public class ComplexMultiplyNode : CodeFunctionNode {
 }
 
 [Title("Math", "Complex", "Complex Divide")]
-public class ComplexDivideNode : CodeFunctionNode {
+internal class ComplexDivideNode : CodeFunctionNode {
 	public ComplexDivideNode() {
 		name = "Complex Divide";
 	}
@@ -86,7 +86,7 @@ public class ComplexDivideNode : CodeFunctionNode {
 }
 
 [Title("Math", "Complex", "Complex Exponential")]
-public class ComplexExponentialNode : CodeFunctionNode {
+internal class ComplexExponentialNode : CodeFunctionNode {
 	public ComplexExponentialNode() {
 		name = "Complex Exponential";
 	}
@@ -108,7 +108,7 @@ public class ComplexExponentialNode : CodeFunctionNode {
 }
 
 [Title("Math", "Complex", "Complex Logarithm")]
-public class ComplexLogarithmNode : CodeFunctionNode {
+internal class ComplexLogarithmNode : CodeFunctionNode {
 	public ComplexLogarithmNode() {
 		name = "Complex Logarithm";
 	}
@@ -128,7 +128,7 @@ public class ComplexLogarithmNode : CodeFunctionNode {
 }
 
 [Title("Math", "Complex", "Complex Power")]
-public class ComplexPowerNode : CodeFunctionNode {
+internal class ComplexPowerNode : CodeFunctionNode {
 	public ComplexPowerNode() {
 		name = "Complex Power";
 	}

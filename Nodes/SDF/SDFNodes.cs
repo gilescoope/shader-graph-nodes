@@ -7,7 +7,7 @@ using UnityEditor.ShaderGraph.Drawing.Controls;
 using UnityEngine;
 
 [Title("SDF", "SDF Line")]
-public class SDFLineNode: CodeFunctionNode {
+internal class SDFLineNode: CodeFunctionNode {
     public SDFLineNode() {
         name = "SDF Line";
     }
@@ -27,7 +27,7 @@ public class SDFLineNode: CodeFunctionNode {
 }
 
 [Title("SDF", "SDF Circle")]
-public class SDFCircleNode: CodeFunctionNode {
+internal class SDFCircleNode: CodeFunctionNode {
     public SDFCircleNode() {
         name = "SDF Circle";
     }
@@ -47,7 +47,7 @@ public class SDFCircleNode: CodeFunctionNode {
 }
 
 [Title("SDF", "SDF Rectangle")]
-public class SDFRectangleNode: CodeFunctionNode {
+internal class SDFRectangleNode: CodeFunctionNode {
     public SDFRectangleNode() {
         name = "SDF Rectangle";
     }
@@ -69,7 +69,7 @@ public class SDFRectangleNode: CodeFunctionNode {
 }
 
 [Title("SDF", "SDF Polygon")]
-public class SDFPolygonNode: CodeFunctionNode {
+internal class SDFPolygonNode: CodeFunctionNode {
     public SDFPolygonNode() {
         name = "SDF Polygon";
     }
@@ -101,7 +101,7 @@ public class SDFPolygonNode: CodeFunctionNode {
 }
 
 [Title("SDF", "SDF Sample")]
-public class SDFSampleNode: CodeFunctionNode {
+internal class SDFSampleNode: CodeFunctionNode {
     public SDFSampleNode() {
         name = "SDF Sample";
     }
@@ -122,7 +122,7 @@ public class SDFSampleNode: CodeFunctionNode {
 }
 
 [Title("SDF", "SDF Sample Strip")]
-public class SDFSampleStripNode: CodeFunctionNode {
+internal class SDFSampleStripNode: CodeFunctionNode {
     public SDFSampleStripNode() {
         name = "SDF Sample Strip";
     }
@@ -150,7 +150,7 @@ public enum BooleanMode
 }
 
 [Title("SDF", "SDF Boolean")]
-public class SDFBooleanNode: CodeFunctionNode {
+internal class SDFBooleanNode: CodeFunctionNode {
     [SerializeField]
     private BooleanMode m_BooleanMode = BooleanMode.Union;
     
@@ -211,7 +211,7 @@ public class SDFBooleanNode: CodeFunctionNode {
 }
 
 [Title("SDF", "SDF Boolean Soft")]
-public class SDFBooleanSoftNode: CodeFunctionNode {
+internal class SDFBooleanSoftNode: CodeFunctionNode {
     [SerializeField]
     private BooleanMode m_BooleanMode = BooleanMode.Union;
     

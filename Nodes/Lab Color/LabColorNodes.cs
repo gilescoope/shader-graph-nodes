@@ -7,7 +7,7 @@ using UnityEditor.ShaderGraph.Drawing.Controls;
 using UnityEngine;
 
 [Title("Artistic", "Utility", "Color Scheme Complimentary")]
-public class ComplimentaryNode : CodeFunctionNode {
+internal class ComplimentaryNode : CodeFunctionNode {
     public ComplimentaryNode() {
         name = "Color Scheme Complimentary";
     }
@@ -45,7 +45,7 @@ public class ComplimentaryNode : CodeFunctionNode {
 }
 
 [Title("Artistic", "Utility", "Color Scheme Split")]
-public class SplitNode : CodeFunctionNode {
+internal class SplitNode : CodeFunctionNode {
     public SplitNode() {
         name = "Color Scheme Split";
     }
@@ -93,7 +93,7 @@ public class SplitNode : CodeFunctionNode {
 }
 
 [Title("Artistic", "Utility", "Color Scheme Dual")]
-public class DualNode : CodeFunctionNode {
+internal class DualNode : CodeFunctionNode {
     public DualNode() {
         name = "Color Scheme Dual";
     }
@@ -177,7 +177,7 @@ public struct LabColorspaceConversion : IEnumConversion {
 }
 
 [Title("Artistic", "Utility", "Lab Colorspace Conversion")]
-public class LabColorspaceConversionNode : CodeFunctionNode {
+internal class LabColorspaceConversionNode : CodeFunctionNode {
     [SerializeField] private LabColorspaceConversion m_Conversion = new LabColorspaceConversion(LabColorspace.RGB, LabColorspace.RGB);
 
     public LabColorspaceConversionNode() {
