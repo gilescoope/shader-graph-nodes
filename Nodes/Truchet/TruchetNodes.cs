@@ -15,7 +15,7 @@ public enum TruchetMode {
 }
 
 [Title("Truchet", "Truchet")]
-public class TruchetNode : CodeFunctionNode {
+internal class TruchetNode : CodeFunctionNode {
     [SerializeField] private TruchetMode m_TruchetMode = TruchetMode.Square;
 
     public TruchetNode() {

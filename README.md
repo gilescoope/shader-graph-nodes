@@ -1,6 +1,11 @@
 # shader-graph-nodes
 
-Custom Nodes for Unity Shader Graph, to be used in Unity 2018.2 with the scriptable render pipeline.
+Custom Nodes for Unity Shader Graph, to be used in newer Unity versions with the SRP / URP / HDRP.\
+It uses CodeFunctionNode API, which was made internal in 2018.2, but is now accessible using 
+[AsmRef](https://docs.unity.cn/2019.4/Documentation/Manual/class-AssemblyDefinitionReferenceImporter.html).
+
+**Requires Unity 2019.4 or higher.**\
+If you wish to use it in older versions, you'll need to remove .asmref file in Nodes folder.
 
 [SDF](https://github.com/gilescoope/shader-graph-nodes/tree/master/Nodes/SDF)
 

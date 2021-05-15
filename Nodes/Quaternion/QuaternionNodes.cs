@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEngine;
 
 [Title("Math", "Quaternion", "Quaternion Inverse")]
-public class QuaternionInverseNode : CodeFunctionNode {
+internal class QuaternionInverseNode : CodeFunctionNode {
     public QuaternionInverseNode() {
         name = "Quaternion Inverse";
     }
@@ -25,7 +25,7 @@ public class QuaternionInverseNode : CodeFunctionNode {
 }
 
 [Title("Math", "Quaternion", "Quaternion From Euler")]
-public class QuaternionFromEulerNode : CodeFunctionNode {
+internal class QuaternionFromEulerNode : CodeFunctionNode {
     public QuaternionFromEulerNode() {
         name = "Quaternion From Euler";
     }
@@ -50,7 +50,7 @@ public class QuaternionFromEulerNode : CodeFunctionNode {
 }
 
 [Title("Math", "Quaternion", "Quaternion From Angle Axis")]
-public class QuaternionFromAngleAxisNode : CodeFunctionNode {
+internal class QuaternionFromAngleAxisNode : CodeFunctionNode {
     public QuaternionFromAngleAxisNode() {
         name = "Quaternion From Angle Axis";
     }
@@ -73,7 +73,7 @@ public class QuaternionFromAngleAxisNode : CodeFunctionNode {
 }
 
 [Title("Math", "Quaternion", "Quaternion To Angle Axis")]
-public class QuaternionToAngleAxisNode : CodeFunctionNode {
+internal class QuaternionToAngleAxisNode : CodeFunctionNode {
     public QuaternionToAngleAxisNode() {
         name = "Quaternion To Angle Axis";
     }
@@ -95,7 +95,7 @@ public class QuaternionToAngleAxisNode : CodeFunctionNode {
 }
 
 [Title("Math", "Quaternion", "Quaternion From To Rotation")]
-public class QuaternionFromToRotationNode : CodeFunctionNode {
+internal class QuaternionFromToRotationNode : CodeFunctionNode {
     public QuaternionFromToRotationNode() {
         name = "Quaternion From To Rotation Node";
     }
@@ -116,7 +116,7 @@ public class QuaternionFromToRotationNode : CodeFunctionNode {
 }
 
 [Title("Math", "Quaternion", "Quaternion Multiply")]
-public class QuaternionMultiplyNode : CodeFunctionNode {
+internal class QuaternionMultiplyNode : CodeFunctionNode {
     public QuaternionMultiplyNode() {
         name = "Quaternion Multiply";
     }
@@ -137,7 +137,7 @@ public class QuaternionMultiplyNode : CodeFunctionNode {
 }
 
 [Title("Math", "Quaternion", "Quaternion Rotate Vector")]
-public class QuaternionRotateVectorNode : CodeFunctionNode {
+internal class QuaternionRotateVectorNode : CodeFunctionNode {
     public QuaternionRotateVectorNode() {
         name = "Quaternion Rotate Vector";
     }
@@ -158,7 +158,7 @@ public class QuaternionRotateVectorNode : CodeFunctionNode {
 }
 
 [Title("Math", "Quaternion", "Quaternion Slerp")]
-public class QuaternionSlerpNode : CodeFunctionNode {
+internal class QuaternionSlerpNode : CodeFunctionNode {
     public QuaternionSlerpNode() {
         name = "Quaternion Slerp";
     }

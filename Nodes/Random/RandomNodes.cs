@@ -9,7 +9,7 @@ using UnityEngine;
 
 
 [Title("Math", "Random", "Random Integer Range")]
-public class RandomIntegerNode : CodeFunctionNode {
+internal class RandomIntegerNode : CodeFunctionNode {
 	public RandomIntegerNode() {
 		name = "Random Integer Range";
 	}
@@ -37,7 +37,7 @@ public enum RandomMode {
 }
 
 [Title("Math", "Random", "Random Circle")]
-public class RandomCircleNode : CodeFunctionNode {
+internal class RandomCircleNode : CodeFunctionNode {
 	[SerializeField] private RandomMode m_RandomMode = RandomMode.In;
 
 	public RandomCircleNode() {
@@ -89,7 +89,7 @@ public class RandomCircleNode : CodeFunctionNode {
 }
 
 [Title("Math", "Random", "Random Sphere")]
-public class RandomSphereNode : CodeFunctionNode {
+internal class RandomSphereNode : CodeFunctionNode {
 	[SerializeField] private RandomMode m_RandomMode = RandomMode.In;
 
 	public RandomSphereNode() {
@@ -145,7 +145,7 @@ public class RandomSphereNode : CodeFunctionNode {
 }
 
 [Title("Math", "Random", "Random Rotation")]
-public class RandomRotationNode : CodeFunctionNode {
+internal class RandomRotationNode : CodeFunctionNode {
 	public RandomRotationNode() {
 		name = "Random Rotation";
 	}
@@ -169,7 +169,7 @@ public class RandomRotationNode : CodeFunctionNode {
 }
 
 [Title("Math", "Random", "Random Color")]
-public class RandomColorNode : CodeFunctionNode {
+internal class RandomColorNode : CodeFunctionNode {
 	public RandomColorNode() {
 		name = "Random Color";
 	}

@@ -7,7 +7,7 @@ using UnityEditor.ShaderGraph.Drawing.Controls;
 using UnityEngine;
 
 [Title("Symmetry", "Reflection Symmetry")]
-public class ReflectionNode: CodeFunctionNode {
+internal class ReflectionNode: CodeFunctionNode {
     public ReflectionNode() {
         name = "Reflection Symmetry";
     }
@@ -32,7 +32,7 @@ public class ReflectionNode: CodeFunctionNode {
 }
 
 [Title("Symmetry", "Rotation Symmetry")]
-public class RotationNode: CodeFunctionNode {
+internal class RotationNode: CodeFunctionNode {
     public RotationNode() {
         name = "Rotation Symmetry";
     }
@@ -69,7 +69,7 @@ public enum TilingMode {
 
 
 [Title("Symmetry", "Tiling Symmetry")]
-public class TilingNode : CodeFunctionNode {
+internal class TilingNode : CodeFunctionNode {
     [SerializeField] private TilingMode m_TilingMode = TilingMode.Square;
 
     public TilingNode() {
